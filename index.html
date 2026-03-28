@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammed Yörük | Portfolio</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #38bdf8;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+button {
+  background: #38bdf8;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<button onclick="toggleLang()">🌍 Language</button>
+
+<h1 id="name">Muhammed Yörük</h1>
+<p id="title">Bilgisayar Mühendisi</p>
+
+<div class="section">
+<h2 id="about-title">Hakkımda</h2>
+<p id="about">
+Siber güvenlik ve yapay zeka alanlarında kendini geliştirmeye odaklanan bir Bilgisayar Mühendisliği öğrencisiyim.
+</p>
+</div>
+
+<div class="section">
+<h2 id="education-title">Eğitim</h2>
+<div class="card">
+<p id="education">
+Zonguldak Bülent Ecevit Üniversitesi – Bilgisayar Mühendisliği (GPA: 3.54)
+</p>
+</div>
+</div>
+
+<div class="section">
+<h2 id="experience-title">Deneyim</h2>
+<div class="card">
+<p id="exp1">ARYA AI – RPA ve Görüntü İşleme Uzmanı</p>
+</div>
+<div class="card">
+<p id="exp2">ARMA Dijital – ML & DL Stajyeri</p>
+</div>
+</div>
+
+<div class="section">
+<h2 id="projects-title">Projeler</h2>
+<div class="card"><b>CyberKids</b></div>
+<div class="card"><b>MediVize</b></div>
+<div class="card"><b>HeyMate</b></div>
+</div>
+
+<div class="section">
+<h2 id="skills-title">Teknik Beceriler</h2>
+<p id="skills">
+Python, Java, TensorFlow, Firebase, RPA (UiPath), Cybersecurity, ML/DL
+</p>
+</div>
+
+</div>
+
+<script>
+let lang = "tr";
+
+function toggleLang() {
+  if (lang === "tr") {
+    document.getElementById("title").innerText = "Computer Engineer";
+    document.getElementById("about-title").innerText = "About Me";
+    document.getElementById("about").innerText =
+      "I am a Computer Engineering student focused on cybersecurity and artificial intelligence.";
+    document.getElementById("education-title").innerText = "Education";
+    document.getElementById("education").innerText =
+      "Zonguldak Bulent Ecevit University – Computer Engineering (GPA: 3.54)";
+    document.getElementById("experience-title").innerText = "Experience";
+    document.getElementById("exp1").innerText =
+      "ARYA AI – RPA & Computer Vision Specialist";
+    document.getElementById("exp2").innerText =
+      "ARMA Digital – ML & DL Intern";
+    document.getElementById("projects-title").innerText = "Projects";
+    document.getElementById("skills-title").innerText = "Technical Skills";
+    document.getElementById("skills").innerText =
+      "Python, Java, TensorFlow, Firebase, RPA (UiPath), Cybersecurity, ML/DL";
+    lang = "en";
+  } else {
+    location.reload();
+  }
+}
+</script>
+
+</body>
+</html>
