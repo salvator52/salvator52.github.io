@@ -9,35 +9,37 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #f7f9fc;
+  color: #1e293b;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
 
 h1, h2 {
-  color: #38bdf8;
+  color: #2563eb;
 }
 
 .section {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .card {
-  background: #1e293b;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 10px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 15px;
 }
 
 button {
-  background: #38bdf8;
+  background: #2563eb;
   border: none;
-  padding: 10px;
+  color: white;
+  padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
   margin-bottom: 20px;
@@ -45,58 +47,131 @@ button {
 
 ul {
   padding-left: 20px;
+  margin: 0;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
 <button onclick="toggleLang()">🌍 Language</button>
 
 <h1 id="name">Muhammed Yörük</h1>
 <p id="title">Bilgisayar Mühendisi</p>
+<p id="contact">
+Abdurrahmangazi Mah., Ferah Cad., Abant Sok. No:18 | 05527498252 | 
+<a href="mailto:mhmmtyrk4434@gmail.com">mhmmtyrk4434@gmail.com</a> | 
+<a href="https://linkedin.com/in/muhammed-yörük" target="_blank">LinkedIn</a>
+</p>
 
+<!-- Hakkımda / About -->
 <div class="section">
 <h2 id="about-title">Hakkımda</h2>
 <p id="about">
-Siber güvenlik ve yapay zeka alanlarında kendini geliştirmeye odaklanan bir Bilgisayar Mühendisliği öğrencisiyim.
+Siber güvenlik ve yapay zeka alanlarında kendini geliştirmeye odaklanan bir Bilgisayar Mühendisliği öğrencisiyim. Bootcamp, konferans ve yarışma gibi etkinliklere aktif olarak katılarak hem teknik hem de analitik becerilerimi sürekli genişletiyorum.
 </p>
 </div>
 
+<!-- Eğitim / Education -->
 <div class="section">
 <h2 id="education-title">Eğitim</h2>
 <div class="card">
 <p id="education">
-Zonguldak Bülent Ecevit Üniversitesi – Bilgisayar Mühendisliği (GPA: 3.54)
+Zonguldak Bülent Ecevit Üniversitesi – Bilgisayar Mühendisliği (GPA: 3.54) | 2021 – Devam Ediyor
 </p>
 </div>
 </div>
 
+<!-- Deneyimler / Experience -->
 <div class="section">
-<h2 id="experience-title">Deneyim</h2>
-<div class="card">
-<p id="exp1">ARYA AI – RPA ve Görüntü İşleme Uzmanı</p>
+<h2 id="experience-title">Deneyimler</h2>
+<div class="card" id="exp1">
+<p><b>ARYA AI – RPA ve Görüntü İşleme Uzmanı (Staj) | Devam Ediyor</b></p>
+<ul>
+<li>RPA çözümleri geliştirerek iş süreçlerinin otomasyonunu sağladım.</li>
+<li>Görüntü işleme teknikleri üzerine araştırma ve uygulama çalışmaları yürüttüm.</li>
+</ul>
 </div>
-<div class="card">
-<p id="exp2">ARMA Dijital – ML & DL Stajyeri</p>
+<div class="card" id="exp2">
+<p><b>ARMA Dijital – Makine Öğrenmesi & Derin Öğrenme Stajyeri | Yaz 2023 – Yaz 2024</b></p>
+<ul>
+<li>Makine öğrenmesi ve derin öğrenme üzerine modelleme çalışmaları geliştirdim.</li>
+<li>Gerçek dünya veri setleri üzerinde model eğitimi ve değerlendirme süreçleri yürüttüm.</li>
+</ul>
+</div>
+<div class="card" id="exp3">
+<p><b>BEUCYBER – Eğitmen & Araştırmacı | Ekim 2023 – Kasım 2024</b></p>
+<ul>
+<li>Üniversite bünyesindeki siber güvenlik topluluğunda eğitim ve araştırma faaliyetleri yürüttüm.</li>
+</ul>
+</div>
+<div class="card" id="exp4">
+<p><b>HSD Zonguldak – Medya Koordinatörü | Şubat 2025 – Devam Ediyor</b></p>
+<ul>
+<li>Etkinlik ve duyuru yönetimi kapsamında medya koordinasyonu görevini üstlendim.</li>
+</ul>
 </div>
 </div>
 
+<!-- Projeler / Projects -->
 <div class="section">
 <h2 id="projects-title">Projeler</h2>
-<div class="card"><b>CyberKids</b></div>
-<div class="card"><b>MediVize</b></div>
-<div class="card"><b>HeyMate</b></div>
+<div class="card" id="proj1"><b>CyberKids</b> – Çocuklara yönelik siber güvenlik farkındalığı ve gamification temelli eğitim uygulaması.</div>
+<div class="card" id="proj2"><b>MediVize</b> – Kamera görüntülerinden acil tıbbi durumları yapay zeka ile tespit eden izleme sistemi.</div>
+<div class="card" id="proj3"><b>HeyMate</b> – Üniversite öğrencilerine özel, güvenli sosyalleşme ve etkinlik takip uygulaması.</div>
 </div>
 
+<!-- Teknik Beceriler / Skills -->
 <div class="section">
 <h2 id="skills-title">Teknik Beceriler</h2>
-<p id="skills">
-Python, Java, TensorFlow, Firebase, RPA (UiPath), Cybersecurity, ML/DL
-</p>
+<div class="card" id="skills">
+<ul>
+<li>Programlama & Araçlar: Python, Java, RPA (UiPath), Firebase, TensorFlow</li>
+<li>Uzmanlık Alanları: Makine Öğrenmesi, Derin Öğrenme, Görüntü İşleme, Siber Güvenlik, Robotik Süreç Otomasyonu</li>
+<li>Kişisel Beceriler: Ekip Çalışması, Analitik Düşünce, Problem Çözümleme</li>
+</ul>
+</div>
+</div>
+
+<!-- Sertifikalar / Certifications -->
+<div class="section">
+<h2 id="certifications-title">Sertifikalar</h2>
+<div class="card" id="cert1">Veri Bilimi ve Makine Öğrenmesi Atölyesi – BTK</div>
+<div class="card" id="cert2">Makine Öğrenmesi – BTK</div>
+<div class="card" id="cert3">Python ile Makine Öğrenmesi Uygulamaları – BTK</div>
+<!-- Daha fazla sertifikayı buraya ekleyebilirsin -->
+</div>
+
+<!-- Yarışmalar / Competitions -->
+<div class="section">
+<h2 id="competitions-title">Yarışmalar & Başarılar</h2>
+<div class="card" id="comp1">NASA Space Apps Challenge 2024 – 2. lik</div>
+<div class="card" id="comp2">Startup Weekend Zonguldak – 1. lik</div>
+</div>
+
+<!-- Konferanslar / Conferences -->
+<div class="section">
+<h2 id="conferences-title">Konferanslar</h2>
+<div class="card" id="conf1">HackTrick 24</div>
+<div class="card" id="conf2">Huawei AR-GE Buluşması</div>
+</div>
+
+<!-- Referanslar / References -->
+<div class="section">
+<h2 id="references-title">Referanslar</h2>
+<div class="card" id="ref1">Samet Alemdar – +90 553 377 75 29</div>
+<div class="card" id="ref2">Hüseyin Kızıl – +90 545 256 23 81</div>
 </div>
 
 </div>
@@ -105,24 +180,28 @@ Python, Java, TensorFlow, Firebase, RPA (UiPath), Cybersecurity, ML/DL
 let lang = "tr";
 
 function toggleLang() {
-  if (lang === "tr") {
+  if(lang==="tr") {
     document.getElementById("title").innerText = "Computer Engineer";
     document.getElementById("about-title").innerText = "About Me";
-    document.getElementById("about").innerText =
-      "I am a Computer Engineering student focused on cybersecurity and artificial intelligence.";
+    document.getElementById("about").innerText = "I am a Computer Engineering student focused on cybersecurity and artificial intelligence, actively participating in bootcamps, conferences, and competitions to expand my technical and analytical skills.";
     document.getElementById("education-title").innerText = "Education";
-    document.getElementById("education").innerText =
-      "Zonguldak Bulent Ecevit University – Computer Engineering (GPA: 3.54)";
+    document.getElementById("education").innerText = "Zonguldak Bulent Ecevit University – Computer Engineering (GPA: 3.54) | 2021 – Present";
     document.getElementById("experience-title").innerText = "Experience";
-    document.getElementById("exp1").innerText =
-      "ARYA AI – RPA & Computer Vision Specialist";
-    document.getElementById("exp2").innerText =
-      "ARMA Digital – ML & DL Intern";
+    document.getElementById("exp1").innerHTML="<b>ARYA AI – RPA & Computer Vision Specialist (Intern) | Ongoing</b><ul><li>Developed RPA solutions to automate business processes.</li><li>Conducted research and implementation in computer vision techniques.</li></ul>";
+    document.getElementById("exp2").innerHTML="<b>ARMA Digital – Machine Learning & Deep Learning Intern | Summer 2023 – Summer 2024</b><ul><li>Developed modeling projects in ML & DL.</li><li>Trained and evaluated models on real-world datasets.</li></ul>";
+    document.getElementById("exp3").innerHTML="<b>BEUCYBER – Instructor & Researcher | Oct 2023 – Nov 2024</b><ul><li>Conducted training and research activities in the university cybersecurity community.</li></ul>";
+    document.getElementById("exp4").innerHTML="<b>HSD Zonguldak – Media Coordinator | Feb 2025 – Ongoing</b><ul><li>Managed media for events and announcements.</li></ul>";
     document.getElementById("projects-title").innerText = "Projects";
-    document.getElementById("skills-title").innerText = "Technical Skills";
-    document.getElementById("skills").innerText =
-      "Python, Java, TensorFlow, Firebase, RPA (UiPath), Cybersecurity, ML/DL";
-    lang = "en";
+    document.getElementById("proj1").innerHTML="<b>CyberKids</b> – Educational gamified app teaching cybersecurity awareness to children.";
+    document.getElementById("proj2").innerHTML="<b>MediVize</b> – Real-time monitoring system detecting emergency medical situations using AI.";
+    document.getElementById("proj3").innerHTML="<b>HeyMate</b> – Safe socialization and campus event tracking app for university students.";
+    document.getElementById("skills-title").innerText="Technical Skills";
+    document.getElementById("skills").innerHTML="<ul><li>Programming & Tools: Python, Java, RPA (UiPath), Firebase, TensorFlow</li><li>Expertise: Machine Learning, Deep Learning, Computer Vision, Cybersecurity, RPA</li><li>Personal Skills: Teamwork, Analytical Thinking, Problem Solving</li></ul>";
+    document.getElementById("certifications-title").innerText="Certifications";
+    document.getElementById("competitions-title").innerText="Competitions & Achievements";
+    document.getElementById("conferences-title").innerText="Conferences";
+    document.getElementById("references-title").innerText="References";
+    lang="en";
   } else {
     location.reload();
   }
