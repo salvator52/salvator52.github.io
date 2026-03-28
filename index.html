@@ -15,7 +15,6 @@
             --text-main: #333333;
             --text-muted: #666666;
             --border-color: #e0e0e0;
-            --success-color: #2ecc71;
             --transition-speed: 0.3s;
         }
 
@@ -79,7 +78,7 @@
 
         /* --- Sağ Ana Bölüm (Scrollable Content) --- */
         .main-content {
-            margin-left: 280px; /* Sidebar genişliği */
+            margin-left: 280px; 
             padding: 50px 60px;
             display: flex;
             flex-direction: column;
@@ -153,7 +152,8 @@
 
         /* Referanslar */
         .reference-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .reference-item { background: var(--bg-color); padding: 20px; border-radius: 8px; font-size: 13px; }
+        .reference-item { background: var(--bg-color); padding: 20px; border-radius: 8px; font-size: 13px; line-height: 1.8; }
+        .reference-item i { width: 20px; text-align: center; }
 
         /* Responsive */
         @media (max-width: 1024px) {
@@ -177,7 +177,7 @@
         <ul class="contact-info">
             <li><i class="fas fa-phone"></i> +90 552 749 82 52</li>
             <li><i class="fas fa-envelope"></i> <a href="mailto:mhmmtyrk4434@gmail.com">mhmmtyrk4434@gmail.com</a></li>
-            <li><i class="fab fa-linkedin"></i> <a href="#" target="_blank">LinkedIn Profilim</a></li>
+            <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/muhammed-yörük" target="_blank">LinkedIn Profilim</a></li>
             <li><i class="fab fa-github"></i> <a href="https://github.com/salvator52" target="_blank">salvator52</a></li>
             <li><i class="fas fa-map-marker-alt"></i> İstanbul / Türkiye</li>
         </ul>
@@ -264,15 +264,44 @@
         <section id="deneyim">
             <h2 class="main-section-title">Deneyimler</h2>
             <div class="card info-card">
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Medya Koordinatörü</div>
+                        <div class="timeline-date">Şubat 2025 – Şubat 2026</div>
+                    </div>
+                    <div class="timeline-subtitle">HSD Zonguldak</div>
+                    <div class="timeline-desc">Etkinlik ve duyuru yönetimi kapsamında topluluk içi medya koordinasyonu ve iletişim stratejileri görevini üstlendim.</div>
+                </div>
+
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <div class="timeline-title">RPA ve Görüntü İşleme Uzmanı (Stajyer)</div>
-                        <div class="timeline-date">Devam Ediyor</div>
+                        <div class="timeline-date">Yaz 2024 – Şubat 2025</div>
                     </div>
                     <div class="timeline-subtitle">ARYA AI</div>
-                    <div class="timeline-desc">RPA çözümleri geliştirerek iş süreçlerinin otomasyonunu sağladım. Görüntü işleme teknikleri üzerine araştırma ve gerçek dünya uygulama çalışmaları yürütüyorum.</div>
+                    <div class="timeline-desc">RPA çözümleri geliştirerek iş süreçlerinin otomasyonunu sağladım. Görüntü işleme teknikleri üzerine araştırma ve gerçek dünya uygulama çalışmaları yürüttüm.</div>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Eğitmen & Araştırmacı</div>
+                        <div class="timeline-date">Ekim 2023 – Kasım 2024</div>
+                    </div>
+                    <div class="timeline-subtitle">BEUCYBER</div>
+                    <div class="timeline-desc">Üniversite bünyesindeki siber güvenlik topluluğunda teknik eğitimler verdim ve araştırma faaliyetleri yürüttüm.</div>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Makine Öğrenmesi & Derin Öğrenme Stajyeri</div>
+                        <div class="timeline-date">Yaz 2023 – Yaz 2024</div>
+                    </div>
+                    <div class="timeline-subtitle">ARMA Dijital</div>
+                    <div class="timeline-desc">Makine öğrenmesi ve derin öğrenme üzerine modelleme çalışmaları geliştirdim. Gerçek dünya veri setleri üzerinde model eğitimi ve değerlendirme süreçleri yürüttüm.</div>
+                </div>
+
+            </div>
         </section>
 
         <section id="basarilar">
@@ -281,7 +310,8 @@
                 <ul class="cert-list">
                     <li><strong>1. lik</strong> - Startup Weekend Zonguldak</li>
                     <li><strong>2. lik</strong> - NASA Space Apps Challenge 2024</li>
-                    <li>Katılımcı - HackTrick 24 & Huawei AR-GE Buluşması</li>
+                    <li>Katılımcı - HackTrick 24</li>
+                    <li>Katılımcı - Huawei AR-GE Buluşması</li>
                 </ul>
             </div>
         </section>
@@ -292,13 +322,15 @@
                 <div class="reference-grid">
                     <div class="reference-item">
                         <strong>Hüseyin Kızıl</strong><br>
-                        <span style="color: var(--text-muted); font-size: 12px;">RPA Developer & Analyst (ARYA AI)</span><br>
-                        +90 545 256 23 81
+                        <span style="color: var(--text-muted); font-size: 12px;">RPA Developer & Business Analyst</span><br>
+                        <i class="fas fa-phone" style="color: var(--accent-color); font-size: 12px;"></i> +90 545 256 23 81<br>
+                        <i class="fas fa-envelope" style="color: var(--accent-color); font-size: 12px;"></i> huseyin.kizil@arya-ai.com
                     </div>
                     <div class="reference-item">
                         <strong>Samet Alemdar</strong><br>
                         <span style="color: var(--text-muted); font-size: 12px;">Solutions Engineer</span><br>
-                        +90 553 377 75 29
+                        <i class="fas fa-phone" style="color: var(--accent-color); font-size: 12px;"></i> +90 553 377 75 29<br>
+                        <i class="fas fa-envelope" style="color: var(--accent-color); font-size: 12px;"></i> samet.alemdar@arya-ai.com
                     </div>
                 </div>
             </div>
