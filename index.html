@@ -21,8 +21,8 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-        /* Ana Düzen: Sol Sabit, Sağ Kaydırılabilir */
-        .page-wrapper { display: flex; min-height: 100vh; }
+        /* Ana Düzen */
+        .page-wrapper { display: block; min-height: 100vh; }
 
         /* --- Sol Kenar Çubuğu (Fixed Sidebar) --- */
         .sidebar {
@@ -34,14 +34,13 @@
             left: 0;
             width: 280px;
             height: 100vh;
-            overflow-y: auto; /* Ekran küçükse scroll çıksın, siteyi bozmasın */
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
             box-shadow: 2px 0 15px rgba(0,0,0,0.03);
             z-index: 100;
         }
 
-        /* Scrollbar tasarımı (Chrome/Edge/Safari için) */
         .sidebar::-webkit-scrollbar { width: 6px; }
         .sidebar::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
 
@@ -75,21 +74,21 @@
             text-align: center;
             display: block;
             text-decoration: none;
-            margin-top: 40px; /* Butonu aşağı it */
+            margin-top: 40px;
             margin-bottom: 20px;
         }
         .contact-btn:hover { background-color: #2980b9; transform: translateY(-2px); }
         .contact-btn:active { transform: translateY(1px); }
 
-        /* --- Sağ Ana Bölüm (Scrollable Content) --- */
+        /* --- Sağ Ana Bölüm --- */
         .main-content {
-            margin-left: 280px; /* Sidebar genişliği kadar soldan boşluk bırak */
-            padding: 50px 60px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            max-width: calc(100% - 280px); /* Taşmayı engellemek için eklendi */
+            margin-left: 280px; /* Sabit menünün genişliği kadar soldan itiyoruz */
+            padding: 50px 5%; /* Sağdan soldan orantılı boşluk */
+            display: block;
+        }
+
+        section {
+            margin-bottom: 50px; /* Bölümler arası boşluk */
         }
 
         .main-section-title {
@@ -164,9 +163,8 @@
 
         /* Responsive Tasarım (Mobil ve Tablet Uyumlu) */
         @media (max-width: 1024px) {
-            .page-wrapper { flex-direction: column; }
             .sidebar { position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); padding: 30px 20px; overflow-y: visible; }
-            .main-content { margin-left: 0; padding: 40px 20px; max-width: 100%; }
+            .main-content { margin-left: 0; padding: 40px 20px; }
         }
     </style>
 </head>
