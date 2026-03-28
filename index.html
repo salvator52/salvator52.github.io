@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammed Yörük | Portfolyo & CV</title>
+    <title>Muhammed Yörük | Bilgisayar Mühendisi & Araştırmacı</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,402 +15,295 @@
             --text-main: #333333;
             --text-muted: #666666;
             --border-color: #e0e0e0;
+            --success-color: #2ecc71;
+            --transition-speed: 0.3s;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+        /* Ana Düzen: Sol Sabit, Sağ Kaydırılabilir */
+        .page-wrapper { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: 1fr 2.5fr;
-            gap: 30px;
-        }
-
-        /* Sol Kolon - Profil, İletişim, Yetenekler */
+        /* --- Sol Kenar Çubuğu (Fixed Sidebar) --- */
         .sidebar {
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            height: fit-content;
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .profile-header h1 {
-            font-size: 24px;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .profile-header h2 {
-            font-size: 16px;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .contact-info {
-            list-style: none;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-
-        .contact-info li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            color: var(--text-muted);
-        }
-
-        .contact-info i {
-            width: 25px;
-            color: var(--accent-color);
-        }
-
-        .contact-info a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: var(--accent-color);
-        }
-
-        .section-title {
-            font-size: 18px;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            margin-top: 30px;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: var(--bg-color);
-            color: var(--primary-color);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1px solid var(--border-color);
-        }
-
-        .cert-list {
-            list-style: none;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .cert-list li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        .cert-list li::before {
-            content: "•";
-            color: var(--accent-color);
-            position: absolute;
+            padding: 40px 20px;
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
             left: 0;
-            font-weight: bold;
-        }
-
-        /* Sağ Kolon - Deneyim, Projeler, vs. */
-        .main-content {
+            width: 280px;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            justify-content: space-between;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.03);
+            z-index: 100;
+        }
+
+        .profile-header { text-align: center; margin-bottom: 30px; }
+        .profile-pic { width: 120px; height: 120px; border-radius: 50%; background: #e0e0e0; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #fff; font-weight: bold; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .profile-header h1 { font-size: 22px; color: var(--primary-color); font-weight: 700; margin-bottom: 5px; }
+        .profile-header h2 { font-size: 14px; color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        .contact-info { list-style: none; font-size: 13px; color: var(--text-muted); }
+        .contact-info li { margin-bottom: 15px; display: flex; align-items: center; }
+        .contact-info i { width: 25px; color: var(--accent-color); font-size: 1.1rem; }
+        .contact-info a { color: var(--text-muted); text-decoration: none; transition: color var(--transition-speed); font-weight: 500; }
+        .contact-info a:hover { color: var(--accent-color); }
+
+        .certificates-section { margin-top: 30px; }
+        .section-subtitle { font-size: 13px; color: var(--primary-color); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border-color); }
+        .cert-list { list-style: none; font-size: 12px; color: var(--text-muted); }
+        .cert-list li { margin-bottom: 8px; padding-left: 15px; position: relative; }
+        .cert-list li::before { content: "•"; color: var(--accent-color); position: absolute; left: 0; font-weight: bold; }
+
+        .contact-btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-speed), transform 0.1s;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            margin-top: auto;
+        }
+        .contact-btn:hover { background-color: #2980b9; transform: translateY(-2px); }
+        .contact-btn:active { transform: translateY(1px); }
+
+        /* --- Sağ Ana Bölüm (Scrollable Content) --- */
+        .main-content {
+            margin-left: 280px; /* Sidebar genişliği */
+            padding: 50px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .main-section-title {
+            font-size: 28px;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .main-section-title::after {
+            content: "";
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
         }
 
         .card {
             background: var(--card-bg);
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
         }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
 
-        .card p {
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
+        /* Projeler Bölümü */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .project-card { position: relative; display: flex; flex-direction: column; }
+        .project-icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 15px; }
+        .project-card h3 { font-size: 18px; color: var(--primary-color); margin-bottom: 10px; font-weight: 600; }
+        .project-card p { font-size: 14px; color: var(--text-muted); flex-grow: 1; }
+        .project-tags { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { background: #e1f5fe; color: #0277bd; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 12px; }
 
+        /* Eğitim, Deneyim, Başarılar Bölümleri */
+        .info-card { padding: 40px; }
         .timeline-item {
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 3px solid var(--bg-color);
             position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+            border-left: 2px solid var(--border-color);
         }
-
+        .timeline-item:last-child { margin-bottom: 0; }
         .timeline-item::before {
             content: "";
-            width: 15px;
-            height: 15px;
+            width: 14px;
+            height: 14px;
             background: var(--accent-color);
             border-radius: 50%;
             position: absolute;
-            left: -9px;
+            left: -8px;
             top: 5px;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px var(--accent-color);
         }
+        .timeline-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+        .timeline-title { font-size: 17px; color: var(--primary-color); font-weight: 600; }
+        .timeline-subtitle { font-size: 14px; color: var(--text-main); font-weight: 600; margin-bottom: 5px; }
+        .timeline-date { font-size: 12px; color: var(--accent-color); font-weight: 600; white-space: nowrap; }
+        .timeline-desc { font-size: 14px; color: var(--text-muted); }
 
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
-        }
+        /* Referanslar */
+        .reference-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .reference-item { background: var(--bg-color); padding: 20px; border-radius: 8px; font-size: 13px; }
 
-        .timeline-title {
-            font-size: 18px;
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .timeline-subtitle {
-            font-size: 15px;
-            color: var(--text-main);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .timeline-date {
-            font-size: 13px;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .timeline-desc {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .project-card {
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .project-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        .project-card p {
-            font-size: 14px;
-            margin-bottom: 0;
-        }
-        
-        .reference-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .reference-item {
-            background: var(--bg-color);
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-
-        /* Responsive Tasarım */
-        @media (max-width: 900px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            .project-grid, .reference-grid {
-                grid-template-columns: 1fr;
-            }
-            .timeline-header {
-                flex-direction: column;
-            }
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .page-wrapper { grid-template-columns: 1fr; }
+            .sidebar { position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); }
+            .main-content { margin-left: 0; padding: 40px 30px; }
+            .project-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="page-wrapper">
     <aside class="sidebar">
         <div class="profile-header">
+            <div class="profile-pic">MY</div>
             <h1>Muhammed Yörük</h1>
             <h2>Bilgisayar Mühendisi & Araştırmacı</h2>
         </div>
 
         <ul class="contact-info">
-            <li><i class="fas fa-envelope"></i> <a href="mailto:mhmmtyrk4434@gmail.com">mhmmtyrk4434@gmail.com</a></li>
             <li><i class="fas fa-phone"></i> +90 552 749 82 52</li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/muhammed-yörük" target="_blank">linkedin.com/in/muhammed-yörük</a></li>
-            <li><i class="fab fa-github"></i> <a href="https://github.com/salvator52" target="_blank">github.com/salvator52</a></li>
-            <li><i class="fas fa-map-marker-alt"></i> Abdurrahmangazi Mah. Ferah Cad. İstanbul / Türkiye</li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:mhmmtyrk4434@gmail.com">mhmmtyrk4434@gmail.com</a></li>
+            <li><i class="fab fa-linkedin"></i> <a href="#" target="_blank">LinkedIn Profilim</a></li>
+            <li><i class="fab fa-github"></i> <a href="https://github.com/salvator52" target="_blank">salvator52</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> İstanbul / Türkiye</li>
         </ul>
 
-        <h3 class="section-title">Teknik Beceriler</h3>
-        <div class="skills-list">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">Makine Öğrenmesi</span>
-            <span class="skill-tag">Derin Öğrenme</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">Siber Güvenlik</span>
-            <span class="skill-tag">RPA (UiPath)</span>
-            <span class="skill-tag">Görüntü İşleme</span>
-            <span class="skill-tag">Firebase</span>
+        <div class="certificates-section">
+            <h4 class="section-subtitle">Sertifikalar</h4>
+            <ul class="cert-list">
+                <li>Deep Learning (Health) – BTK</li>
+                <li>Python & TensorFlow – BTK</li>
+                <li>RPA (UiPath) – BTK</li>
+                <li>Siber Güvenlik Analisti – BTK</li>
+            </ul>
         </div>
 
-        <h3 class="section-title">Yabancı Dil</h3>
-        <ul class="cert-list">
-            <li>İngilizce – B1 (AmericanLIFE)</li>
-        </ul>
+        <div class="certificates-section" style="margin-top: 20px;">
+            <h4 class="section-subtitle">Diller</h4>
+            <ul class="cert-list">
+                <li>İngilizce – B1</li>
+            </ul>
+        </div>
 
-        <h3 class="section-title">Sertifikalar</h3>
-        <ul class="cert-list">
-            <li>Veri Bilimi ve Makine Öğrenmesi Atölyesi – BTK</li>
-            <li>Python ile Makine Öğrenmesi Uygulamaları – BTK</li>
-            <li>Deep Learning / Sağlıkta Yapay Zeka – BTK</li>
-            <li>Veri Bilimi için Python ve TensorFlow – BTK</li>
-            <li>UiPath Robotik Süreç Otomasyonu – BTK</li>
-            <li>Siber Güvenlik Analisti – BTK</li>
-            <li>Cyber Threat Hunting Giriş – BTK</li>
-            <li>Linux 101-401 & Python – Turkcell Geleceği Yazanlar</li>
-        </ul>
+        <a href="mailto:mhmmtyrk4434@gmail.com" class="contact-btn">Bana Ulaşın</a>
     </aside>
 
     <main class="main-content">
-        <div class="card">
-            <h3 class="section-title" style="margin-top: 0;">Hakkımda</h3>
-            <p>Siber güvenlik ve yapay zeka alanlarında kendini geliştirmeye odaklanan bir Bilgisayar Mühendisliği öğrencisiyim. Bootcamp, konferans ve yarışma gibi etkinliklere aktif olarak katılarak hem teknik hem de analitik becerilerimi sürekli genişletiyorum. Amacım yazılım dünyasında kalıcı ve yenilikçi çözümler üretmek.</p>
-        </div>
-
-        <div class="card">
-            <h3 class="section-title" style="margin-top: 0;">Deneyimler</h3>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-title">RPA ve Görüntü İşleme Uzmanı (Stajyer)</div>
-                    <div class="timeline-date">Devam Ediyor</div>
-                </div>
-                <div class="timeline-subtitle">ARYA AI</div>
-                <div class="timeline-desc">RPA çözümleri geliştirerek iş süreçlerinin otomasyonunu sağladım. Görüntü işleme teknikleri üzerine araştırma ve gerçek dünya uygulama çalışmaları yürütüyorum.</div>
+        
+        <section id="hakkimda">
+            <h2 class="main-section-title">Hakkımda</h2>
+            <div class="card info-card">
+                <p>Siber güvenlik ve yapay zeka alanlarında kendini geliştirmeye odaklanan, disiplinli ve yenilikçi bir Bilgisayar Mühendisliği öğrencisiyim. Bootcamp, konferans ve yarışma gibi etkinliklere aktif olarak katılarak teknik ve analitik becerilerimi sürekli genişletiyorum. Yazılım dünyasında kalıcı ve yenilikçi çözümler üretmeyi hedefliyorum.</p>
             </div>
+        </section>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-title">Medya Koordinatörü</div>
-                    <div class="timeline-date">Şubat 2025 – Devam Ediyor</div>
+        <section id="projeler">
+            <h2 class="main-section-title">Öne Çıkan Projeler</h2>
+            <div class="project-grid">
+                <div class="card project-card">
+                    <i class="fas fa-user-shield project-icon"></i>
+                    <h3>CyberKids</h3>
+                    <p>Siber güvenlik farkındalığının çocukluktan kazandırılması vizyonuyla geliştirilen, çocuklara yönelik eğlenceli ve oyunlaştırma (gamification) temelli eğitim uygulaması.</p>
+                    <div class="project-tags">
+                        <span class="tag">Gamification</span>
+                        <span class="tag">Cyber Security</span>
+                        <span class="tag">Python</span>
+                    </div>
                 </div>
-                <div class="timeline-subtitle">HSD Zonguldak</div>
-                <div class="timeline-desc">Etkinlik ve duyuru yönetimi kapsamında topluluk içi medya koordinasyonu ve iletişim stratejileri görevini üstlendim.</div>
+                <div class="card project-card">
+                    <i class="fas fa-heartbeat project-icon"></i>
+                    <h3>MediVize</h3>
+                    <p>Kamera görüntülerinden nöbet, kalp krizi gibi acil tıbbi durumları yapay zeka destekli görüntü işleme ile tespit eden gerçek zamanlı izleme sistemi.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">Image Processing</span>
+                        <span class="tag">Health</span>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <i class="fas fa-campground project-icon"></i>
+                    <h3>HeyMate</h3>
+                    <p>Yalnızca üniversite öğrencilerine özel, güvenli sosyalleşme ve kampüs etkinliklerini kaçırmama odaklı bir mobil sosyal uygulama.</p>
+                    <div class="project-tags">
+                        <span class="tag">Social Campus</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Networking</span>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-title">Eğitmen & Araştırmacı</div>
-                    <div class="timeline-date">Ekim 2023 – Kasım 2024</div>
+        <section id="egitim">
+            <h2 class="main-section-title">Eğitim</h2>
+            <div class="card info-card">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Zonguldak Bülent Ecevit Üniversitesi</div>
+                        <div class="timeline-date">2021 – 2026 Yaz (Beklenen)</div>
+                    </div>
+                    <div class="timeline-subtitle">Bilgisayar Mühendisliği</div>
+                    <div class="timeline-desc"><strong>GPA:</strong> 3.59</div>
                 </div>
-                <div class="timeline-subtitle">BEUCYBER</div>
-                <div class="timeline-desc">Üniversite bünyesindeki siber güvenlik topluluğunda teknik eğitimler verdim ve araştırma faaliyetleri yürüttüm.</div>
             </div>
+        </section>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-title">Makine Öğrenmesi & Derin Öğrenme Stajyeri</div>
-                    <div class="timeline-date">Yaz 2023 – Yaz 2024</div>
+        <section id="deneyim">
+            <h2 class="main-section-title">Deneyimler</h2>
+            <div class="card info-card">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">RPA ve Görüntü İşleme Uzmanı (Stajyer)</div>
+                        <div class="timeline-date">Devam Ediyor</div>
+                    </div>
+                    <div class="timeline-subtitle">ARYA AI</div>
+                    <div class="timeline-desc">RPA çözümleri geliştirerek iş süreçlerinin otomasyonunu sağladım. Görüntü işleme teknikleri üzerine araştırma ve gerçek dünya uygulama çalışmaları yürütüyorum.</div>
                 </div>
-                <div class="timeline-subtitle">ARMA Dijital</div>
-                <div class="timeline-desc">Makine öğrenmesi ve derin öğrenme üzerine modelleme çalışmaları geliştirdim. Gerçek dünya veri setleri üzerinde model eğitimi ve değerlendirme süreçleri yürüttüm.</div>
-            </div>
-        </div>
+                </div>
+        </section>
 
-        <div class="card">
-            <h3 class="section-title" style="margin-top: 0;">Eğitim & Başarılar</h3>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-title">Bilgisayar Mühendisliği</div>
-                    <div class="timeline-date">2021 – Devam Ediyor</div>
-                </div>
-                <div class="timeline-subtitle">Zonguldak Bülent Ecevit Üniversitesi</div>
-                <div class="timeline-desc"><strong>GPA:</strong> 3.54</div>
-            </div>
-            
-            <div style="margin-top: 20px;">
-                <p><strong>🏆 Başarılar & Katılımlar:</strong></p>
+        <section id="basarilar">
+            <h2 class="main-section-title">Başarılar & Katılımlar</h2>
+            <div class="card info-card">
                 <ul class="cert-list">
                     <li><strong>1. lik</strong> - Startup Weekend Zonguldak</li>
                     <li><strong>2. lik</strong> - NASA Space Apps Challenge 2024</li>
                     <li>Katılımcı - HackTrick 24 & Huawei AR-GE Buluşması</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <h3 class="section-title" style="margin-top: 0;">Öne Çıkan Projeler</h3>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>CyberKids</h3>
-                    <p>Siber güvenlik farkındalığının çocukluktan kazandırılması vizyonuyla geliştirilen, çocuklara yönelik eğlenceli ve oyunlaştırma (gamification) temelli eğitim uygulaması.</p>
-                </div>
-                <div class="project-card">
-                    <h3>MediVize</h3>
-                    <p>Kamera görüntülerinden nöbet, kalp krizi gibi acil tıbbi durumları yapay zeka destekli görüntü işleme ile tespit eden gerçek zamanlı izleme sistemi.</p>
-                </div>
-                <div class="project-card">
-                    <h3>HeyMate</h3>
-                    <p>Yalnızca üniversite öğrencilerine özel, güvenli sosyalleşme ve kampüs etkinliklerini kaçırmama odaklı bir mobil sosyal uygulama.</p>
+        <section id="referanslar">
+            <h2 class="main-section-title">Referanslar</h2>
+            <div class="card info-card">
+                <div class="reference-grid">
+                    <div class="reference-item">
+                        <strong>Hüseyin Kızıl</strong><br>
+                        <span style="color: var(--text-muted); font-size: 12px;">RPA Developer & Analyst (ARYA AI)</span><br>
+                        +90 545 256 23 81
+                    </div>
+                    <div class="reference-item">
+                        <strong>Samet Alemdar</strong><br>
+                        <span style="color: var(--text-muted); font-size: 12px;">Solutions Engineer</span><br>
+                        +90 553 377 75 29
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <h3 class="section-title" style="margin-top: 0;">Referanslar</h3>
-            <div class="reference-grid">
-                <div class="reference-item">
-                    <strong>Hüseyin Kızıl</strong><br>
-                    <span style="color: var(--text-muted); font-size: 13px;">RPA Developer & Business Analyst (ARYA AI)</span><br>
-                    <i class="fas fa-phone" style="color: var(--accent-color); font-size: 12px;"></i> +90 545 256 23 81<br>
-                    <i class="fas fa-envelope" style="color: var(--accent-color); font-size: 12px;"></i> huseyin.kizil@arya-ai.com
-                </div>
-                <div class="reference-item">
-                    <strong>Samet Alemdar</strong><br>
-                    <span style="color: var(--text-muted); font-size: 13px;">Solutions Engineer</span><br>
-                    <i class="fas fa-phone" style="color: var(--accent-color); font-size: 12px;"></i> +90 553 377 75 29
-                </div>
-            </div>
-        </div>
     </main>
 </div>
 
